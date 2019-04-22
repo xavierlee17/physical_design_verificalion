@@ -7,7 +7,7 @@
 # 所以開發了這一套環境，去更加方便地使用Calibre，以及達到在多Process的情況下統一地、方便地管理驗證環境的目的。
 # 有一系列的彩蛋會隱藏于這個腳本之中，而這些彩蛋--個人建議，並不要告知非開發人員，擔心他們弄錯，造成debug以及管理的不便。
 
-# 這套系統兼容的EDA 工具： Calibre（2013+），Virtuoso（6.1.x），華大九天Aether，Laker（後期會開發）。
+# 這套系統兼容的EDA 工具： Calibre（2013+），Virtuoso（6.1.x），華大九天Aether，Laker（敬請期待）。
 
 # 個人提供的Calibre Rule File ：
 #        1. Power Check or Extract
