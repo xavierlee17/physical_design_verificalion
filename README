@@ -1,1 +1,18 @@
-TEST
+# Author : Xavier Lee
+# Email  : xavierlee17@outlook.com
+# If have any problem, please contact me immediately.
+
+# 鑒於很多 IC Design 公司還繼續在使用 Calibre 本身自帶的GUI程式去做Verification，雖然也有一部分公司在使用自己寫的Script去建立驗證環境，
+# 但都會由於一些原因會造成多多少少的不穩定，抑或會造成非開發人員與經驗不足的員工的設置錯誤。
+# 所以開發了這一套環境，去更加方便地使用Calibre，以及達到在多Process的情況下統一地、方便地管理驗證環境的目的。
+# 有一系列的彩蛋會隱藏于這個腳本之中，而這些彩蛋--個人建議，並不要告知非開發人員，擔心他們弄錯，造成debug以及管理的不便。
+
+# 這套系統兼容的EDA 工具： Calibre（2013+），Virtuoso（6.1.x），華大九天Aether，Laker（後期會開發）。
+
+# 個人提供的Calibre Rule File ：
+#        1. Power Check or Extract
+#        2. Net Open For Finfet
+#        3. Power or Net Open For All Process
+#        4. Singal VIA For Power/Net
+#        5. Missing VIA for All(Power and Singal)
+#        6. GDSII/OASIS Compared with 2 files
