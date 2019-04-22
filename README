@@ -8,7 +8,9 @@
 # 有一系列的彩蛋會隱藏于這個腳本之中，而這些彩蛋--個人建議，並不要告知非開發人員，擔心他們弄錯，造成debug以及管理的不便。
 
 # 兼容的EDA工具 ：Calibre（2013+），Virtuoso（6.1.x），華大九天Aether，Laker（敬請期待）。
-# 支持的機器環境 ：Red Hat Enterprise Linux 5+，Cent OS 6+，Debian 8+，Ubuntu 12+。 （tcsh！！！）
+# 支持的運行系統 ：Red Hat Enterprise Linux 5+，Cent OS 6+，Debian 8+，Ubuntu 12+。 （tcsh！！！）
+# 最差的機器環境 ：8 CPU，16G Memory.（真的很慢）
+# 建議的機器環境 ：32+ CPU，64G+ Memory.（才剛剛好）
 # 支持的運行模式 ：Local(默認32個CPU，可調整)，LSF mode with ONE machine（可調整），LSF mode with muti-machine（可調整）.
 
 # 個人提供的Calibre Rule File ：
