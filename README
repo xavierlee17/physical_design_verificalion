@@ -26,3 +26,36 @@
 
 # Schedule：
 # 2019-6-30 -- Version 0.0(本人有拖延癥，日期可能會改，請發送EMAIL催更。)
+
+关于 gameofthones 项目
+
+作者 李秋贤（Xavier-Studio）
+
+1.背景：由于中美贸易战，EDA资源日发紧张。由于中国IC设计公司普遍资源浪费严重且日益严重，所以开发一套 Layout to Verification 资源管理软件很有必要。
+2.目的：想提高全中国的IC设计公司效率。
+3.开发与支持环境：Red Hat 5+，CentOS 6+，Ubuntu 14+，Debian 7+。
+4.支持的EDA工具 ：Virtuoso Calibre Laker Aether(华大九天Layout Editor) Argus(华大九天Layout验证工具) Skipper（华大九天GDS/OASIS/LEF编辑工具）StarRC QRC ICEANDFIRE
+5.开发语言与工具：Bash，Perl，Tcl，QT，Python，Shc。
+6.开发流程：
+	第一阶段：全方位建立脚本环境，建立 Tyrion 脚本环境体系（后台自动多线程资源调配，脚本管理，LSF管理）。
+	第二阶段：围绕 Tyrion 脚本环境体系，建立 JonSnow 界面体系，即GUI 界面体系。
+	第三阶段：围绕 Tyrion 脚本环境体系和 JonSnow 界面体系，打造 Varys 后台体系，即后台 Tapeout 及其他 数据收集体系，以及情报分析。
+	第四阶段：全方位测试软件，优化资源调配，优化数据收集，优化情报分析，加密一切需要加密的内容，发布消息等。（Baelish系统）
+	第五阶段：建立数据库，收集大数据（Bran系统）
+	第六阶段：实际项目试运作，数据整合，继续优化资源调配，加密、封装源码。（Sansa系统）
+	第七阶段：商业运作（？）
+7.开发进程大纲：
+	1.	Rule File管理系统(Tyrion)
+	2.	DRC运作系统(Tyrion)
+	3.	LVS运作系统(Tyrion)
+	4.	PERC运作系统(Tyrion)
+	5.	多线程异步运作系统(Tyrion)
+	6.	Local机器与LSF资源管理系统(Tyrion)
+	7.	Layout/Schematic Editor to database 管理系统(Tyrion)
+	8.	GUI界面(JonSnow)
+	9.	RC抽取与数据保存机制(Varys)
+	10.	Tapeout管理系统(Varys)
+	11.	关键数据获得系统(Baelish)
+	12.	关键数据分析系统(Baelish)
+	13.	数据库(Bran)
+	14.	数据整合系统(Sansa)
