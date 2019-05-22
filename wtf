@@ -27,13 +27,27 @@
 	4.	LVS运作系统(Tyrion)
 	5.	PERC运作系统(Tyrion)
 	6.	多线程异步运作系统(Tyrion)
-	7.	Local机器与LSF资源管理系统(Tyrion)
-	8.	GUI界面(JonSnow)
-	9.	RC抽取与数据保存机制(Varys)
-	10.	Tapeout管理系统(Varys)
-	11.	关键数据获得系统(Baelish)
-	12.	关键数据分析系统(Baelish)
-	13.	数据库(Bran)
-	14.	数据整合系统(Sansa)
-	15.	测试，整理，优化细节
-	16.	程序加密和封装
+	7.	Tapeout强制验证运作系统(Tyrion)
+	8.	EDA运行占用系统资源研究以及License使用情况研究(必要)
+	9.	Local机器与LSF资源管理系统(Tyrion)
+	10.	GUI界面(JonSnow)
+	11.	RC抽取与数据保存机制(Varys)
+	12.	Tapeout管理系统(Varys)
+	13.	关键数据获得系统(Baelish)
+	14.	关键数据分析系统(Baelish)
+	15.	数据库(Bran)
+	16.	数据整合系统(Sansa)
+	17.	测试，整理，优化细节
+	18.	程序加密和封装
+9.研究新设想：
+	1.	尝试并入SSD硬盘做运行盘，突破EDA（主要是Calibre和Argus）运行时的读写瓶颈(必要，且需要IT部门帮忙)
+	2.	尝试尝试使用内存做存储空间，突破EDA（主要是Calibre和Argus）运行时的读写瓶颈(未知在Linux下可否成功，需要IT部门帮忙)
+	3.	尝试优化Rule File和其他脚本的存放结构，目标是以一人之力（最多4人）就可以管理所有团队的验证必要文件
+10.关于Calibre Rule File：
+	1.	尝试把零散，分散的Rule File存放系统重构
+11.人力成本预计（按每天至少12小时算）
+	8.1 ~8.10，1人，3个月
+	8.11~8.15，2人，2个月 （尤其是数据库的创建、优化需要帮忙）
+	8.16~8.18, 2人，1个月
+12.牵涉部门
+	IT（LSF）,EDA（需要调配以及license管理）,CAD（难点需要支持）
