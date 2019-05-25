@@ -1,0 +1,71 @@
+NO.	需求	Note	结果	Date
+1	完全依照N5的使用习惯开发			
+2	"建立环境文件系统：优先级为
+1.实时输入
+2.运行目录配置文件
+3.Home目录配置文件
+4.默认配置文件（交付级别）
+
+输入 whosyourdaddy 强制使用默认配置文件进行交付验证"			
+3	可以指定运行路径（运行路径与文件保存路径是不一样的，目的是以后IT部门加入SSD 硬盘，突破读写瓶颈			
+4	建立Local运行机制	Default		
+5	建立LSF mode 1 ： 把Local运行机制丢LSF，且可指定机器（可指定1部或多部）	推荐		
+6	建立LSF mode 2 ： 把所有任务丢LSF（不限定数量，不可指定机器）	不推荐		
+7	建立 RULE FILE 管理系统			
+8	建立 RULE FILE 检索系统			
+9	使用多线程运行任务且可控			
+10	与现在N5的抽取CDL、GDS 结果相同			
+11	建立图灵现有的所有CDL、GDS 抽取脚本			
+12	建立 GDS/OASIS 文件切换系统			
+13	建立 CDL/GDS/OASIS 脚本管理系统			
+14	建立 CDL/GDS/OASIS 脚本检索系统			
+15	当GDS/OASIS 有同时生成需求时，OASIS优先			
+16	保存运行Log file，且可限定数量			
+17	提供可更改DRC/LVS/PERC的自定义脚本接口（分个人和统一更改）			
+18	提供可更改CDL/GDS/OASIS的自定义脚本接口（分个人和统一更改）			
+19	提供 CDL Converter 接口			
+20	保存DRC结果文件，且可限定数量			
+21	保存DRC所有结果文件，提供开关			
+22	保存DRC所有结果文件并压缩，提供开关			
+23	DRC支持Exclude cell			
+24	保存LVS结果文件，且可限定数量			
+25	保存LVS所有结果文件，提供开关			
+26	保存LVS所有结果文件并压缩，提供开关			
+27	LVS支持Exclude cell			
+28	LVS支持Hcell			
+29	LVS支持LVS BOX			
+30	LVS支持LVS Black BOX（从LVS BOX拓展）			
+31	LVS支持只运行LVS，不运行ERC			
+32	LVS支持layout system spice			
+33	SVS（支持Exclude cell）			
+34	LVL（支持Exclude cell）			
+35	保存PERC结果文件，且可限定数量			
+36	保存PERC所有结果文件，提供开关			
+37	保存PERC所有结果文件并压缩，提供开关			
+38	PERC支持Exclude cell			
+39	PERC支持Hcell			
+40	PERC支持LVS BOX			
+41	PERC支持LVS Black BOX（从LVS BOX拓展）			
+42	当运行DRC/LVS运行结束时，显示DRC/ERC结果，提供开关			
+43	当运行DRC/LVS运行结束时，显示DRC/ERC结果数量，提供开关			
+44	当DRC/LVS/PERC完成时，提供自定义脚本开关去显示定制结果报告			
+45	"提供管理员监控功能，需要获得：
+1.运行时间
+2.运行路径
+3.运行命令
+4.用那种模式？Local、LSF Mode 1、LSF Mode 2
+5.峰值CPU
+6.运行log
+7.License使用情况"			
+46	默认使用Virtuoso和Calibre			
+47	兼容华大九天Aether和Argus			
+48	运行完自动生成本次运行的完整报告			
+49	开发DRC专用GUI界面（交付）			
+50	开发LVS专用GUI界面（交付）			
+51	开发PERC专用GUI界面（交付）			
+52	开发SVS专用GUI界面（交付）			
+53	开发LVL专用GUI界面（交付）			
+54	开发DRC专用GUI界面（debug）			
+55	开发LVS专用GUI界面（debug）			
+56	开发PERC专用GUI界面（debug）			
+57	全部GUI界面统合			
