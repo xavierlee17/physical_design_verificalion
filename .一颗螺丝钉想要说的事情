@@ -1,0 +1,126 @@
+作为一个曾经花了巨大心血在Calibre Rule的工程师，我想说一些“东西”。
+
+1.关于Rule Team。
+  1. Rule Team不可能脱离Layout、Process、电路Design，以及交付之后发现的问题而独立存在。但需要建立一个个交流的标准。
+  2. Rule Team需要考虑的有：
+    1.验证质量
+    2.验证速度
+    3. Fault Error
+    4.怎样从最优配置的角度构成一份Rule
+    5.怎样最快速地配置到最多的Process
+    6.怎样兼容所有的Project
+    7.怎样以最小Layout改动去查一个已知的问题
+    8.怎样编写Comment让Layout工程师快速了解这个Rule到底check的是什么
+    9. Foundry 版本控制 与 本公司 版本控制，以及 备份
+    10.每个版本的update comment编写，怎样明确写明所有的update，why do it & how do it
+
+  3. Rule的质量需要大量的测试，涉及的人员有：
+    1.各项目Leader，每更新一次，我们需要针对性地到项目中查看问题。
+    2.每个做Layout QA的工程师，虽然是随机抽选，但Rule是针对每一个人的，一条Rule必须兼容非常多的Case，同时减去可以减去的Fault Error才能算是达到Rule质量控制目的。
+    3.每个Process Manager，他们提出的需求往往是他们最清楚，这对验证Rule的质量是一个真真实实的考验。
+    4.每个电路Design，任何电路Design都可以提出对Rule的需求，只要他们有想check的东西，经过需求是否合理的讨论之后，我们必须满足他们的要求。
+    5. CAD Team，跑验证用的命令，只要一个参数便可以造成不同的结果，怎样配合，怎样交流，我们需要定制一个交流的标准。
+
+  4. Rule Team的弊端：
+    1.非常容易成为替罪羊。
+    因为Rule不是万能的，我们可以提高电路和layout的质量，但不可能无限提高，我们只能拉高到一个标准，而不是全能，因为我们是人，人总有犯错的时刻，人总会后知后觉。
+    在晶门科技，经历过被各种误解以及成为替罪羊，因为职权和办公室斗争。
+    假如成为替罪羊的经历多了，必定造成大量人才流失，因为人不会总想着背黑锅。
+    所以我们要知道Rule Team需要干什么，Rule Team可以干什么，Rule Team能干到什么程度。
+    不要总想着我们整合了那么多资源和知识，我们就是上帝，毕竟我们只是一个个有血有肉的人。
+    2.非常容易造成其他同事不懂什么叫脚本，什么叫Rule。
+    因为整合了太多资源，以及Rule Team每天都将会是忙不过来的情况，所以对同事的交流会大大减少，反而没太多的时间去让同事们去Try、没太多时间去培训同事们。
+    所以造成了同事们的脚本能力有大幅下降。
+    以前在晶门科技常常听到一句话：有问题找PDV。过分的依赖以及各项目头头的怕事，加上权力的游戏，造成晶门PDV员工的压力过大，以及成为各种问题的替罪羊。
+    所以，Layout Leader，Process Manager，CAD Team的科普培训尤为重要。
+
+  5.怎样定位Rule Team人员：
+    1. Rule Team是Layout质量保证的第二责任人，Layout Leader、Process Manager才是Layout质量的第一责任人。
+    2. Rule Team是Rule质量保证的第一责任人，Layout同事发现Rule有问题之后，Rule Team同事必须第一时间赶到现场。
+    3. Rule Team人员必须是全方位复合型人才，不了解CAD，不了解Rule，不了解Process需要关注的点的人不能胜任。
+    4. Rule Team人员帮Layout同事Debug的时候，需要先查看Debug的Layout的信息，包括系统需要收集的信息，Log File，GDS、OASIS信息，Rule File信息，配置信息，不能永远相信已配置好而生成出来的文件。
+    5. Rule Team人员必须每天交流，Rule Team Leader需要每天更新自己的信息库，Rule Team Leader永远是Rule Team的第一责任人。打不破部门墙和项目墙，Rule Team将会失去自己的方向，将会失去存在的意义。
+    6. Rule Team的所有人必须了解自己能做的事和自己做不了的事，沟通无间收集信息，针对问题第一时间寻求帮助，永远是对自身的第一要求。自己做不了的事请交给专业人士解决。
+
+  6.需要订立各种标准，明确责任：
+    1. Rule Team需要订立每条通用Rule（For All Proces）的中文文档说明，why do it，how do it，how debug it，必须要通俗易懂，这需要Layout Leader、Process Manager、CAD Team的帮助。
+    2. Rule Team需要针对每个Process的Latch-Up、ESD Rule，与Process Manager和Latch-Up、ESD Designer共同设立。
+    3. Rule Team需要订立一个沟通的标准，例如所有新Rule需求必须从Email途径发出，同时at所有相关人员与各个Team Leader来一起讨论其合理性，得出讨论结果之后再进行Rule的开发与维护。
+
+  7.关于Rule 的实时Debug：
+    1. Layout同事发现Rule有问题时，应该第一时间找Layout Leader。Layout Leader解决不了问题或者是有其他事情需要处理时，才到Rule Team同事出手。
+    2.针对定制Rule有关于Process/Latch-Up/ESD问题时，应该第一时间找Process/Latch-Up/ESD Designer，假如他们也发现Rule有问题的时候，Rule Team同事必须实时切入解决问题。
+
+2.关于 Rule 的技术：
+  1. Rule的开发：
+    1.关于通用Rule：
+      1.必须考虑怎样以最小的脚本系统去兼容最多的Process。
+      2. Finfer与20/22nm以上的脚本系统必须不一样，也就是说需要装备两套方案。
+      3.怎样以最少的信息配置最多的Rule，这需要直接应用到GDS Number，任何Include进来的Rule（LVS Rule除外）都会拖慢新开发的Rule的速度。
+      4.需要普遍用到DFM/CMACRO/DMACRO，这是最基本的基础，假如是动态的rule，必须在这个基础的标准上加进TVF，尽可能不要在Calibre的外部生成一份动态的Rule。
+      5.在不影响速度的情况下，尽量使用TVF，因为可以读环境配置与文件配置，在多Project里面简直就是Calibre内部最佳解决方案，是神器。
+      6.竟可能把Fault Error减少到零，假如不能，请在Comment里面详细写明例外的Case。
+      7.必须参与到PDK改进、ESD device、new device、layout加layer 等的讨论当中去，Rule永远不可能脱离实际情况而自成一体。
+      8.必须搞清楚Calibre SVRF/DFM/TVF/PERC 的每个命令是怎样去工作的，包括每一条命令的每一个Option。
+    2.关于专用Rule：
+      1.必须从Process和电路Design的角度出发，以已知问题作为标准，用Project里面发现的情况为例子，从例子拓展例子，举一反三，从“用户是傻瓜”的角度去看问题，去开发Case兼容性极强的Rule，质量优先，速度其次。
+      2.必须尽可能减少Fault Error，假如不能，请在Comment里面详细写明例外的Case。
+      3.有条件的话应该从电路的设计开始入手，用PERC去check 电路设计，从schematic开始入手把风险项排除干净，减少电路designer的后知后觉是保证layout速度的前提。
+  3.关于信息流通：
+      1.Rule Team人员必须拿到所有项目历史数据以及所有项目到现时发现的问题，从大数据去分析优先级，把紧急的事项先处理。
+      2. Rule Team人员必须拿到所有项目的 Rule 负责人在过去建立过用来debug的Rule以及这个Debug Rule后面的故事。
+
+  2. Rule的维护:
+      1. Rule的检索、查询、版本控制、备份，必须要建立一套系统，这需要CAD Team的帮助，但Rule Team必须是Rule的第一数据控制者和第一数据处理者。
+      2.在每次更新之后，不单单只针对update了的Rule去做Layout QA，更要直接拿一个相关Project来跑，和Layout Leader，Process Manager一起去Review。
+      3. Rule 的 Layout QA和项目重跑不可以是Rule Team人员跑，一定要在QA人员和Layout Leader的帮助下跑。
+
+  3.关于 Foundry Rule 与 返回的结果的debug
+      1.有的时候，因为系统/机器环境配置和Rule配置的不同，Foundry返回的结果可能会有所不同，这个时候我们需要拿到Foundry的Log File，一步步分析。
+      2.发现Foundry Rule 有问题，必须第一时间和Process Manager沟通，第一时间通知所有相关Process的Layout Leader，Design Leader，假如Foundry不能及时反应，我们就要内部定制标准，及时处理。
+
+3.关于CAD Team + Rule的未来：
+  1.不是所有人对脚本都有天赋的，必须要开发一个可视化界面去迎合各个水平的工程师去便捷地跑验证。
+  2.脚本系统必须要有高度的可扩展性、兼容性、可移植性（可以移植到任何linux平台上）、易用性、结果统合与通知。
+  3.必须兼容多个验证工具。
+  4.必须把脚本做成系统，高度集成。
+  5.必须做成可并行跑验证。
+  6.必须做成在没有LSF的情况下并行多机器跑验证。
+  7.必须有Plan B。
+
+4.关于IT需要帮忙的事情：
+  1.安装最新版本的Wine，并同时研究如何把eSpace移植到Linux系统当中，红区到黄区再到红区 并不是一个长远的永远的方案。
+  2.研究是否可以利用服务器上面的PCI-E接口，是否可以安装PCI-E SSD硬盘到专用服务器上，当做读写的tmp盘（消耗品），突破读写瓶颈。
+  3.研究是否可以把模拟部所有机器接到一个局域网并SSH到某一部个人专用机上，这可以利用闲置的机器资源。
+
+5.关于Process和 电路/Latch-Up/ESD Design：
+  1.他们有责任把Process和Design的所有禁止事项公布，然后与Rule Team合作，做成一个标准，并做成大家都知道的文档方便大家阅读和debug，以及新人培训一点会用到。
+  2.他们有责任和Rule Team合作无间，因为有的时候信息传播并没有那么快，Rule Team应该被当做他们发布消息的第一知情人。
+  3.明确责任界限，他们才是保证一个项目质量的第一责任人，Rule Team是他们的左右手，Rule Team是Rule的质量的第一责任人。
+
+6.关于后仿问题：
+  1. Rule Team需要负责的不单单是DRC/LVS/PERC Rules，还需要负责抽取RC以及RC质量保证。
+  2. Rule Team需要统一配置精确到每一个Process的RC配置，以及实时动态支持Layout和电路Design的需求。
+  3. Rule Team需要精确弄懂每一个的PEX 命令。比如Slot的问题。
+  4.假如电路Design发现问题，必须第一时间赶到现场帮忙定位问题。
+
+7.一些总结：
+  1.我们的服务对象是： Process Manager 和 电路/Latch-Up/ESD Designer。
+  2.我们的敌人是：     Rule的准确率，Rule运行的速度，同事们的失误，错误，以及无知。
+  3.我们的伙伴是：			Layout Leader，Layout Engineer，Process Manager 和 电路/Latch-Up/ESD Designer。
+  4.我们躬耕于黑暗而服侍于光明，我们需要解放同事们的生产力。
+  5. Rule Team同事的 无知 和 消息不准确性，是整个生产团队的灾难。
+  6.并不是每一件可以算出来的事，都有意义；也不是每一件有意义的事，都可以被算出来。但只要接到任务，无论多复杂，只要合理，便要保证完成任务。
+  7.各个订立的标准是沟通的前提。
+
+  无论这次结果如何，对于这个新成立的Team，我是感到又喜又忧，对于以前的经验，我想说的有很多，所以40分钟更本就说不完我想说的东西。
+  我自己也从最初的Layout Engineer，经历过PDK的开发和管理，经历过Layer Mapping的痛苦，经历过Calibre Rule开发与优化的痛苦，经历过Calibre和Lic、机器资源关系的研究，经历过华大九天转换Rule之后的Debug，经历过批量管理Rule…到图灵之后又回到最初的Layout...再回到现在我自己就可以独立开发一个不依赖海思环境的Layout验证系统…
+  我想我现在更了解了“做Rule的”存在的意义：质量保证和速度保证是我们的出发点，但不是我们的终点。我们需要做的是一个完整的体系和流程的优化。
+  虽然这个过程会造成“阵痛”，但不经历这些的话，其他同事的效率将等不到解放，人力成本继续上升，人员流失更加严重，毕竟人心都是往“事少钱多”的方向走，如何精简人员数量，因此，单兵作战效率的提升非常重要，这是其一。
+  第二，因为国家问题的关系，License和机器资源也比较紧张，LSF的收费也是非常巨大，我们需要整合现有可以整合的一切资源，才有可能支持我们接下来要打的硬仗。
+
+  说真的，看到这些的人实在是太少了，我有话没地方说，即使说出来也没太多人明白这里面的细节与重要性，无论是外面的公司、同行，以及图灵这边对这方面的专业性也比较弱，很多东西发展到一定程度就已经不是“够用就行”这种程度了。所以我个人真的感到异常孤独。
+
+	虽然我只是一颗“螺丝钉”，但我也想打胜仗。
+
+谢谢。
