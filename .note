@@ -11,3 +11,17 @@ DMACRO MISSING_VIA MX MY VIAX VIAX_W {
         XY = DFM PROPERTY XY_MISS MX MY OVERLAP ABUT ALSO MULTI [-=(GLOBALNETID(MX,1) == GLOBALNETID(MY,1)) ? 1:0]==1
         FLATTEN XY
 }
+
+set filei [lindex $argv 0]
+set fileo [lindex $argv 1]
+set tmp [split $fileo "."]
+set type [lindex $tmp [expr [llength $tmp] -1]]
+set WholeLayout [layout create $filei -dt_expand -preservePath -preserveTextAttributes -preserveProperties]
+set Layout $WholeLayout
+set MaxDepth [$Layout maxdepth]
+set Precision [$Layout precision]
+if {$type == "oas" || $type == "oasis"} {
+        $Layout oasisout $file0 -noEmptyCells noRefs
+} else {
+        $Layout gdsout $file0 -noEmptyCells noRefs
+}
